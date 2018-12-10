@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Ambiente</title>
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<!--  JQuery -->
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+input.field-error, textarea.field-error {
+	border: 1px solid #B94A48;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="navbar-header">
+				<a class="navbar-brand" th:href="@{/}"><img
+					src="../static/img/hotdog-logo.png"
+					th:src="@{/img/hotdog-logo.png}" /></a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a class="brand" href="https://www.casadocodigo.com.br">Casa
+						do Código</a></li>
+				<li><a class="brand" href="https://www.boaglio.com">boaglio.com</a></li>
+				<li><a class="brand"
+					href="https://projects.spring.io/spring-boot/">Spring Boot</a></li>
+				<li><a class="brand"
+					href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf
+						Layout</a></li>
+				<li><a href="http://livereload.com" class="btn btn-lg	btn-info">LiveReload</a></li>
+			</ul>
+		</nav>
+		<h1 layout:fragment="header">Ambiente</h1>
+		<div layout:fragment="content" class="container">
+			<div>
+				<h1>Spring Actuator</h1>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/autoconfig}">autoconfig</a>
+								</p>
+							</td>
+							<td>
+								<p>Displays an auto-configuration report showing all
+									auto-configuration candidates and the reason why they “were” or
+									“were not” applied.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/beans}">beans</a>
+								</p>
+							</td>
+							<td>
+								<p>Displays a complete list of all the Spring Beans in your
+									application</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/configprops}">configprops</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									Displays a collated list of all
+									<code class="literal">@ConfigurationProperties</code>
+									.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/dump}">dump</a>
+								</p>
+							</td>
+							<td>
+								<p>Performs a thread dump.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/env}">env</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									Exposes properties from Spring’s
+									<code class="literal">ConfigurableEnvironment</code>
+									.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/health}">health</a>
+								</p>
+							</td>
+							<td>
+								<p>Shows application health information (defaulting to a
+									simple “OK” message).</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/info}">info</a>
+								</p>
+							</td>
+							<td>
+								<p>Displays arbitrary application info.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/metrics}">metrics</a>
+								</p>
+							</td>
+							<td>
+								<p>Shows “metrics” information for the current application.</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/mappings}">mappings</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									Displays a collated list of all
+									<code class="literal">@RequestMapping</code>
+									paths.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#" th:href="@{/trace}">trace</a>
+								</p>
+							</td>
+							<td>
+								<p>Displays trace information (by default the last few HTTP
+									requests).</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
